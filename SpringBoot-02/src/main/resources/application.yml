@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+
+#person:
+#    id: 1
+#    lastName: rifu
+#    age: 18
+#    birth:  2018/8/8
+#    maps: {k1: v1,k2: v2}
+#    lists:
+#        - a
+#        - b
+#        - c

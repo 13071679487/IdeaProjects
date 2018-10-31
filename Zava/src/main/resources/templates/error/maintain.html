@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>爪蛙</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+    <script type="text/javascript"
+            src="asserts/js/jquery-1.11.2.min.js" th:src="@{/asserts/js/jquery-1.11.2.min.js}"></script>
+    <!-- 引入js文件 -->
+    <script src="asserts/layui/layui.all.js" th:src="@{/asserts/layui/layui.all.js}"></script>
+    <script src="asserts/js/common.js"th:src="@{/asserts/js/common.js}"></script>
+    <!-- 引入样式 -->
+    <link href="asserts/layui/css/layui.css" th:href="@{/asserts/layui/css/layui.css}" rel="stylesheet">
+    <link href="asserts/layui/css/layui.css" th:href="@{/asserts/css/common.css}" rel="stylesheet">
+</head>
+<body class="layui-layout-body" style="background-color: #e8e8e8">
+<div class="layui-layout">
+
+    <div th:replace="commons/bar :: #header"></div>
+
+    <div style="padding:15px;display: -ms-flexbox;display: flex;-ms-flex-align: center;align-items: center;">
+        <!-- 内容主体区域 -->
+        <div class="layui-card layui-col-md4" style="margin: auto;;border-radius:20px;background-color:rgba(255,255,255,.7);">
+            <div class="layui-card-header"><h4>提示</h4></div>
+            <div class="layui-card-body">
+                你当前所访问的网页正在维护中...
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:replace="commons/bar :: #footer"></div>
+
+</div>
+
+
+</body>
+</html>

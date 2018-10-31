@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="commons-pool-1.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Redis/JedisDemo/web/WEB-INF/lib/jedis-jar/commons-pool-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Redis/JedisDemo/web/WEB-INF/lib/jedis-jar/jedis-2.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

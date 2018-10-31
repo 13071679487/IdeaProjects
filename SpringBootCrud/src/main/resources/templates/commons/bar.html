@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="layui-header">
+    <a href="/main.html" class="layui-logo">SpringBoot控制台</a>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+            <a href="javascript:;">
+                <img src="${currentUser.headIcon }" class="layui-nav-img">
+                [[${session.currentUser}]]
+            </a>
+            <dl class="layui-nav-child">
+                <dd><a href="">基本资料</a></dd>
+                <dd><a href="">安全设置</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="/adminlogout" style='color:rgb(255,64,64)'>注销</a></li>
+    </ul>
+</div>
+
+
+<div id="sidemenu" class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li data-name="product" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="商品管理" lay-direction="2">
+                    <i class="layui-icon layui-icon-home"></i>
+                    <cite>商品管理</cite>
+                    <span class="layui-nav-more"></span>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a class="href-item"  url="${path }/jsp/manage/manage_product.jsp">商品管理</a>
+                    </dd>
+                    <dd>
+                        <a class="href-item"   url="${path }/jsp/manage/manage_product.jsp">仓库管理</a>
+                    </dd>
+                    <dd>
+                        <a class="href-item"  url="${path }/jsp/manage/manage_category.jsp">商品标签管理</a>
+                    </dd>
+                </dl>
+            </li>
+            <li data-name="manage-order" class="layui-nav-item">
+                <a class="href-item" th:href="@{/emps}" th:class="${activeUrl == 'emps'? 'layui-nav-item layui-this':'layui-nav-item'}">
+                    <i class="layui-icon layui-icon-form"></i>
+                    <cite>用戶管理</cite>
+                </a>
+            </li>
+            <li data-name="manage-promotion" class="layui-nav-item">
+                <a class="href-item" url="${path }/jsp/manage/manage_category.jsp">
+                    <i class="layui-icon layui-icon-diamond"></i>
+                    <cite>促销管理</cite>
+                </a>
+            </li>
+            <li data-name="manage-feedback" class="layui-nav-item">
+                <a class="href-item" url="${path }/jsp/manage/manage_category.jsp">
+                    <i class="layui-icon layui-icon-dialogue"></i>
+                    <cite>商家反馈</cite>
+                </a>
+            </li>
+            <li data-name="manage-message" class="layui-nav-item">
+                <a class="href-item" url="${path }/jsp/manage/manage_category.jsp">
+                    <i class="layui-icon layui-icon-chat"></i>
+                    <cite>客户留言</cite>
+                </a>
+            </li>
+            <li data-name="manage-statistics" class="layui-nav-item">
+                <a class="href-item" th:href="@{/main.html}"  th:class="${activeUrl == 'main.html'? 'layui-nav-item layui-this':'layui-nav-item'}">
+                    <i class="layui-icon layui-icon-chart"></i>
+                    <cite>主页</cite>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="layui-footer">
+    <!-- 底部固定区域 -->
+    联系作者：Rifu   13071679487
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="layui-header">
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <a href="/" class="layui-logo">新青腾测试题目</a>
+</div>
+
+
+<div id="sidemenu" class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li data-name="manage-order" class="layui-nav-item">
+                <a class="href-item" th:href="@{/portal/prod/list}" th:class="${activeUrl == 'prod'? 'layui-nav-item layui-this':'layui-nav-item'}">
+                    <i class="layui-icon layui-icon-home"></i>
+                    <cite>产品管理</cite>
+                </a>
+            </li>
+            <li data-name="manage-order" class="layui-nav-item">
+                <a class="href-item" th:href="@{/portal/cate/list}" th:class="${activeUrl == 'cate'? 'layui-nav-item layui-this':'layui-nav-item'}">
+                    <i class="layui-icon layui-icon-app"></i>
+                    <cite>分类管理</cite>
+                </a>
+            </li>
+            <li data-name="manage-promotion" class="layui-nav-item">
+                <a class="href-item" th:href="@{/portal/rec/list}" th:class="${activeUrl == 'record'? 'layui-nav-item layui-this':'layui-nav-item'}">
+                    <i class="layui-icon layui-icon-console"></i>
+                    <cite>仓库管理</cite>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="layui-footer">
+    <!-- 底部固定区域 -->
+    联系作者：Rifu   13071679487
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rifu.springboot.mapper.CategoryMapper">
+    <cache eviction="FIFO" flushInterval="60000" readOnly="false" size="1024"></cache>
+    <resultMap id="BaseResultMap" type="com.rifu.springboot.entity.Category">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="c_name" jdbcType="VARCHAR" property="cName" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <select id="selectByPrimaryKey" parameterType="int" resultType="com.rifu.springboot.entity.Category">
+        select * from t_category where id = #{id}
+    </select>
+
+    <select id="selectCategorys" resultMap="BaseResultMap">
+      select * from t_category
+    </select>
+
+    <select id="selectByParentId" parameterType="int" resultMap="BaseResultMap">
+      select c.id,c.c_name,c.create_time,c.update_time from t_category c
+      left join category_relation cr
+      on c.id = cr.c_id
+      where cr.c_parentid=#{id}
+    </select>
+
+    <insert id="insertCategory" parameterType="com.rifu.springboot.entity.Category" useGeneratedKeys="true" keyProperty="id">
+        insert into t_Category(
+        c_name,create_time,update_time
+        )
+        values (
+        #{cName},now(),now()
+        )
+    </insert>
+
+    <update id="updateCategoryByPrimaryKeySelective" parameterType="com.rifu.springboot.entity.Category">
+      update t_Category
+        <set>
+            <if test="cName != null">
+                c_name = #{cName,jdbcType=VARCHAR},
+            </if>
+              update_time = now()
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteCategoryByPrimaryKey" parameterType="int">
+        delete from t_category
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteCategoryBatch" parameterType="map">
+        delete from t_Category
+        <if test="cids != null and cids.size() > 0">
+            where id in
+            <foreach item="id" index="index" open="(" separator="," close=")" collection="cids">
+                #{id}
+            </foreach>
+        </if>
+    </delete>
+
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rifu.springboot.mapper.RepertoryMapper">
+    <resultMap id="BaseResultMap" type="com.rifu.springboot.entity.Repertory">
+        <id column="p_number" jdbcType="VARCHAR" property="pNumber" />
+        <result column="p_amount" jdbcType="INTEGER" property="pAmount" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <select id="selectByProductNumber" resultType="com.rifu.springboot.entity.Repertory">
+        select * from t_repertory where p_number = #{pNumber}
+    </select>
+
+    <select id="selectRepertorys" resultMap="BaseResultMap">
+      select * from t_repertory
+    </select>
+
+
+    <insert id="insertRepertory" parameterType="com.rifu.springboot.entity.Repertory">
+        insert into t_Repertory(
+        p_amount,create_time,update_time
+        )
+        values (
+        #{pAmount},now(),now()
+        )
+    </insert>
+
+    <update id="updateRepertorySelective" parameterType="com.rifu.springboot.entity.Repertory">
+      update t_repertory
+        <set>
+            <if test="pAmount != null">
+                p_amount = #{pAmount,jdbcType=INTEGER},
+            </if>
+              update_time = now()
+        </set>
+        where p_number = #{pNumber,jdbcType=VARCHAR}
+    </update>
+
+</mapper>

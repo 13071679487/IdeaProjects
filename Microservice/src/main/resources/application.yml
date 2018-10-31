@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username: rifu
+    password: 528428
+    url: jdbc:mysql://localhost:3306/micro_service
+    driver-class-name: com.mysql.jdbc.Driver
+# 通过指定schema来确定一开始要执行什么sql语句
+#    schema:
+#       - classpath:dept.sql
+
+
+    #--------------------------charset---------------
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+
+
+#Mybatis 的一些简单配置
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+
+
+#日志输出配置
+logging:
+  config: classpath:logback-config.xml

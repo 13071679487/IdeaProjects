@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>爪蛙</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+
+    <link rel="stylesheet" href="asserts/css/common.css" th:href="@{/asserts/css/common.css}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="asserts/css/animate.css" th:href="@{/asserts/css/animate.css}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="asserts/css/icomoon.css" th:href="@{/asserts/css/icomoon.css}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="asserts/css/bootstrap.css" th:href="@{/asserts/css/bootstrap.css}">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="asserts/css/magnific-popup.css" th:href="@{/asserts/css/magnific-popup.css}">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="asserts/css/flexslider.css" th:href="@{/asserts/css/flexslider.css}">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="asserts/css/owl.carousel.min.css" th:href="@{/asserts/css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="asserts/css/owl.theme.default.min.css" th:href="@{/asserts/css/owl.theme.default.min.css}">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="asserts/css/style.css" th:href="@{/asserts/css/style.css}">
+
+    <!-- Modernizr JS -->
+    <script src="asserts/js/modernizr-2.6.2.min.js" th:src="@{/asserts/js/modernizr-2.6.2.min.js}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="asserts/js/respond.min.js" th:src="@{/asserts/js/respond.min.js}"></script>
+    <![endif]-->
+
+</head>
+<body class="layui-layout-body" style="background-color: #eea236">
+<div class="colorlib-loader"></div>
+
+<div id="page">
+    <div th:replace="commons/bar :: #header(activeUrl='home')"></div>
+
+    <aside id="colorlib-breadcrumbs" style="margin-top: 150px;background-color: rgba(0,0,0,0)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 breadcrumbs text-center">
+                    <h2>项目展示</h2>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="colorlib-container" >
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-4">
+                    <div class="blog-entry">
+                        <div class="blog-img">
+                            <a href="https://rifu520.gitee.io/"><img  src="http://img.zava.vip/img/gitee.png" class="img-responsive" ></a>
+                        </div>
+                        <div class="desc">
+                            <p class="meta">
+                                <span class="cat"><a >Blog</a></span>
+                                <span class="date">20 October 2018</span>
+                                <span class="pos">By <a th:href="@{/about}">Rifu</a></span>
+                            </p>
+                            <h2><a href="https://rifu520.gitee.io/" target="_blank">Gitee 个人博客</a></h2>
+                            <p>使用Gitee 和 hexo 搭建的一个个人博客，记录一些学习笔记 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-entry">
+                        <div class="blog-img">
+                            <a href="http://shop.zava.vip/"><img  src="http://img.zava.vip/img/eyushop.png" class="img-responsive" ></a>
+                        </div>
+                        <div class="desc">
+                            <p class="meta">
+                                <span class="cat"><a >Shop</a></span>
+                                <span class="date">May 2018</span>
+                                <span class="pos">By <a th:href="@{/about}">Rifu</a></span>
+                            </p>
+                            <h2><a href="http://shop.zava.vip/" target="_blank">五邑商城</a></h2>
+                            <p>一个电商项目，使用框架为Spring+SpringMVC+Mybatis，麻雀虽小，也费尽心血 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-entry">
+                        <div class="blog-img">
+                            <a href="http://blog.zava.vip/"><img  src="http://img.zava.vip/img/eyublog.png" class="img-responsive" ></a>
+                        </div>
+                        <div class="desc">
+                            <p class="meta">
+                                <span class="cat"><a >Forum</a></span>
+                                <span class="date">March 2018</span>
+                                <span class="pos">By <a th:href="@{/about}">Rifu</a></span>
+                            </p>
+                            <h2><a href="http://blog.zava.vip/" target="_blank">邑人邑语</a></h2>
+                            <p>一个个人论坛，使用框架为Spring+SpringMVC+Mybatis，因为是很久之前弄的，代码比较烂 </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="colorlib-instagram">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 colorlib-heading text-center">
+                <h2>Gallery</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="instagram-entry">
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-1.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-2.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-3.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-4.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-5.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-6.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-7.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-8.jpg}" >
+                </img>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="commons/bar :: #colorlib-footer"></div>
+
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}"></script>
+<!-- jQuery Easing -->
+<script src="asserts/js/jquery.easing.1.3.js" th:src="@{/asserts/js/jquery.easing.1.3.js}"></script>
+<!-- Bootstrap -->
+<script src="asserts/js/bootstrap.min.js" th:src="@{/asserts/js/bootstrap.min.js}"></script>
+<!-- Waypoints -->
+<script src="asserts/js/jquery.waypoints.min.js" th:src="@{/asserts/js/jquery.waypoints.min.js}"></script>
+<!-- Flexslider -->
+<script src="asserts/js/jquery.flexslider-min.js" th:src="@{/asserts/js/jquery.flexslider-min.js}"></script>
+<!-- Owl carousel -->
+<script src="asserts/js/owl.carousel.min.js" th:src="@{/asserts/js/owl.carousel.min.js}"></script>
+<!-- Magnific Popup -->
+<script src="asserts/js/jquery.magnific-popup.min.js" th:src="@{/asserts/js/jquery.magnific-popup.min.js}"></script>
+<script src="asserts/js/magnific-popup-options.js" th:src="@{/asserts/js/magnific-popup-options.js}"></script>
+<!-- Main -->
+<script src="asserts/js/main.js" th:src="@{/asserts/js/main.js}"></script>
+
+</body>
+</html>

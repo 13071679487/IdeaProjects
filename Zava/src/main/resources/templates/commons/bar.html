@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- portal-->
+<nav id="header" class="colorlib-nav blur-bg" role="navigation" style="position: fixed;top: 0;width: 100%;">
+    <div class="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div style="font-size: 24px;margin: 0;padding:0;line-height: 30px;font-weight: 700;"><a th:href="@{/}" style="color: #e8e8e8;">爪蛙</a></div>
+                </div>
+                <div class="col-xs-8 text-right menu-1">
+                    <ul>
+                        <li th:class="${activeUrl == 'home'? 'active':''}" ><a th:href="@{/}" style="font-weight: bold;font-size: 14px;">主页</a></li>
+                        <li th:class="${activeUrl == 'about'? 'active':''}" ><a th:href="@{/about}" style="font-weight: bold;font-size: 14px;">关于作者</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<footer id="colorlib-footer" role="contentinfo" style="padding-top: 50px;padding-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="text-align: center;">
+                    <small class="block" style="color: #e8e8e8;">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 粤ICP备18125101号
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<head>
+    <meta charset="UTF-8">
+</head>
+</html>

@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    username: rifu
+    password: 528428
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+# 通过指定schema来确定一开始要执行什么sql语句
+#    schema:
+#       - classpath:dept.sql
+
+#  在Springboot2.0以后要加上以下这句，才会执行上面的.sql文件
+    initialization-mode: always
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+#   详细的属性配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMills: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#   配置监控统计拦截的filters,去掉后监控页面的sql无法统计，''wall '' 用户防火墙
+    filters: stat,wall,slf4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    conenctionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+#Mybatis 的一些简单配置
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml

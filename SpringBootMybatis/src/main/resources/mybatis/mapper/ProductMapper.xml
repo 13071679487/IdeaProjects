@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rifu.springboot.mapper.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.rifu.springboot.entity.Product">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="p_name" jdbcType="VARCHAR" property="pName" />
+        <result column="p_number" jdbcType="VARCHAR" property="pNumber" />
+        <result column="c_id" jdbcType="INTEGER" property="cId" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <select id="selectByPrimaryKey" resultType="com.rifu.springboot.entity.Product">
+        select * from t_product where id = #{id}
+    </select>
+
+    <select id="selectByProductNumber" resultType="com.rifu.springboot.entity.Product">
+      select * from t_product where p_number = #{p_number}
+    </select>
+
+    <select id="selectAllProduct" resultMap="BaseResultMap">
+      select * from t_product
+    </select>
+
+    <select id="selectByCategoryId" parameterType="map" resultMap="BaseResultMap">
+      select * from t_product
+      where 1=1
+    <if test="cids != null and cids.size() > 0">
+        and c_id in
+        <foreach item="cid" index="index" open="(" separator="," close=")" collection="cids">
+            #{cid}
+        </foreach>
+    </if>
+    </select>
+
+    <insert id="insertProduct" parameterType="com.rifu.springboot.entity.Product" useGeneratedKeys="true" keyProperty="id">
+        insert into t_product(
+        p_number,p_name,c_id,create_time,update_time
+        )
+        values (
+        #{pNumber},#{pName},#{cId},now(),now()
+        )
+    </insert>
+
+    <update id="updateProductByPrimaryKeySelective" parameterType="com.rifu.springboot.entity.Product">
+      update t_product
+        <set>
+            <if test="pNumber != null">
+                p_number = #{pNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="pName != null">
+                p_name = #{pName,jdbcType=VARCHAR},
+            </if>
+            <if test="cId != null">
+                c_id = #{cId,jdbcType=INTEGER},
+            </if>
+              update_time = now()
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteProductByPrimaryKey" parameterType="int">
+        delete from t_product
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteProductByNumber" parameterType="string">
+        delete from t_product
+        where p_number = #{pNumber}
+    </delete>
+
+    <delete id="deleteProductBatch" parameterType="map">
+        delete from t_product
+        <if test="pids != null and pids.size() > 0">
+            where id in
+            <foreach item="id" index="index" open="(" separator="," close=")" collection="pids">
+                #{id}
+            </foreach>
+        </if>
+    </delete>
+
+</mapper>

@@ -1,0 +1,8 @@
+server:
+  port: 8080
+hoster: rifu
+get-hoster: "hoster:  ${hoster}"
+person:
+  age: 18
+  name: Lili
+

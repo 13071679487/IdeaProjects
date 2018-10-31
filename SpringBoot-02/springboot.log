@@ -1,0 +1,18 @@
+2018-09-07 [main] INFO  com.rifu.springboot02.SpringBoot02ApplicationTests - Starting SpringBoot02ApplicationTests on Rifu with PID 10260 (started by Lifu in D:\IdeaProjects\SpringBoot-02)
+2018-09-07 [main] DEBUG com.rifu.springboot02.SpringBoot02ApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-07 [main] INFO  com.rifu.springboot02.SpringBoot02ApplicationTests - No active profile set, falling back to default profiles: default
+2018-09-07 [main] INFO  o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@69ee81fc: startup date [Fri Sep 07 18:07:34 CST 2018]; root of context hierarchy
+2018-09-07 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@69ee81fc: startup date [Fri Sep 07 18:07:34 CST 2018]; root of context hierarchy
+2018-09-07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/hello]}" onto public java.lang.String com.rifu.springboot02.controller.HelloController.hello()
+2018-09-07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-07 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-07 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-07 [main] INFO  com.rifu.springboot02.SpringBoot02ApplicationTests - Started SpringBoot02ApplicationTests in 11.24 seconds (JVM running for 15.204)
+2018-09-07 [main] TRACE com.rifu.springboot02.SpringBoot02ApplicationTests - 这是trace 日志
+2018-09-07 [main] DEBUG com.rifu.springboot02.SpringBoot02ApplicationTests - 这是debug日志
+2018-09-07 [main] INFO  com.rifu.springboot02.SpringBoot02ApplicationTests - 这是info日志
+2018-09-07 [main] WARN  com.rifu.springboot02.SpringBoot02ApplicationTests - 这是warn日志
+2018-09-07 [main] ERROR com.rifu.springboot02.SpringBoot02ApplicationTests - 这是error日志
+2018-09-07 [Thread-2] INFO  o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@69ee81fc: startup date [Fri Sep 07 18:07:34 CST 2018]; root of context hierarchy

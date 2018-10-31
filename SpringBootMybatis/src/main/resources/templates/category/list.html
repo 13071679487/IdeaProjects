@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>管理控制台</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+    <script type="text/javascript"
+            src="asserts/js/jquery-1.11.2.min.js" th:src="@{/asserts/js/jquery-1.11.2.min.js}"></script>
+    <!-- 引入js文件 -->
+    <script src="asserts/layui/layui.all.js" th:src="@{/asserts/layui/layui.all.js}"></script>
+    <script src="asserts/js/common.js"th:src="@{/asserts/js/common.js}"></script>
+    <!-- 引入样式 -->
+    <link href="asserts/layui/css/layui.css" th:href="@{/asserts/layui/css/layui.css}" rel="stylesheet">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+
+    <div th:replace="commons/bar :: .layui-header"></div>
+
+    <div th:replace="commons/bar :: #sidemenu(activeUrl='cate')"></div>
+
+    <div class="layui-body" style="padding:15px;">
+        <!-- 内容主体区域 -->
+
+        <div>
+            <a class="layui-btn layui-btn-xs" th:href="@{/portal/cate/add}">+ 添加分类</a>
+        </div>
+
+        <table class="layui-table">
+            <thead>
+            <th>ID</th>
+            <th>分类名字</th>
+            <th>创建时间</th>
+            <th>更新时间</th>
+            </thead>
+            <tbody >
+            <tr th:each="cate:${cates}">
+                <td th:text="${cate.id}"></td>
+                <td th:text="${cate.cName}"></td>
+                <td th:text="${cate.createTime}"></td>
+                <td th:text="${cate.updateTime}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div th:replace="commons/bar :: .layui-footer"></div>
+
+</div>
+
+<script>
+    $(function () {
+        // var prods="${prods}";
+        // console.log(prods);
+    })
+
+    $(".btnDelete").on('click',function () {
+        $("#form_del").attr("action",$(this).attr("delUrl")).submit()
+        return false
+    })
+
+</script>
+
+
+</body>
+</html>

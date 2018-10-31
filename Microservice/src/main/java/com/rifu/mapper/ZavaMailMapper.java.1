@@ -1,0 +1,19 @@
+package com.rifu.mapper;
+
+import com.rifu.entity.ZavaMail;
+
+public interface ZavaMailMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(ZavaMail record);
+
+    int insertSelective(ZavaMail record);
+
+    ZavaMail selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(ZavaMail record);
+
+    int updateByPrimaryKeyWithBLOBs(ZavaMail record);
+
+    int updateByPrimaryKey(ZavaMail record);
+}

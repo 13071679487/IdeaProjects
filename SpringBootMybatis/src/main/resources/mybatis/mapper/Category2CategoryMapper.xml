@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rifu.springboot.mapper.Category2CategoryMapper">
+    <resultMap id="BaseResultMap" type="com.rifu.springboot.entity.Category2Category">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="c_id" jdbcType="INTEGER" property="cId" />
+        <result column="c_parentid" jdbcType="INTEGER" property="cParentid" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <resultMap id="CategoryResultMap" type="com.rifu.springboot.entity.Category">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="c_name" jdbcType="VARCHAR" property="cName" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <select id="selectParentCategoryByCid" parameterType="int" resultType="com.rifu.springboot.entity.Category">
+        select c.id,c.c_name,c.create_time,c.update_time from category_relation cr
+        left join t_category c
+        on  cr.c_parentid = c.id
+        where cr.c_id = #{id}
+    </select>
+
+
+    <select id="selectChildrenCategoryByCid" resultMap="CategoryResultMap">
+      select c.id,c.c_name,c.create_time,c.update_time from category_relation cr
+      left join t_category c
+      on cr.c_id = c.id
+      where cr.c_parentid = #{id}
+    </select>
+
+</mapper>

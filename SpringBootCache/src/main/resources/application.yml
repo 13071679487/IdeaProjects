@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cache
+    username: rifu
+    password: 528428
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  #Mybatis 的一些简单配置
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+

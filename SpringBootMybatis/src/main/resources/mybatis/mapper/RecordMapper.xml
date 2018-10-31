@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rifu.springboot.mapper.RecordMapper">
+    <resultMap id="BaseResultMap" type="com.rifu.springboot.entity.Record">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="p_number" jdbcType="VARCHAR" property="pNumber" />
+        <result column="r_type" jdbcType="INTEGER" property="type" />
+        <result column="r_amount" jdbcType="INTEGER" property="amount" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <select id="selectByProductNumber" resultMap="BaseResultMap">
+        select * from t_record where p_number = #{pNumber}
+    </select>
+
+    <select id="selectRecords" resultMap="BaseResultMap">
+        select * from t_record
+    </select>
+
+
+    <insert id="insertRecord" parameterType="com.rifu.springboot.entity.Record">
+        insert into t_Record(
+        p_number,r_type,r_amount,create_time,update_time
+        )
+        values (
+        #{pNumber},#{type},#{amount},now(),now()
+        )
+    </insert>
+
+</mapper>

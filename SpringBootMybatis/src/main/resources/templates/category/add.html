@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>添加产品</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+
+    <script type="text/javascript"
+            src="asserts/js/jquery-1.11.2.min.js" th:src="@{/asserts/js/jquery-1.11.2.min.js}"></script>
+    <!-- 引入js文件 -->
+    <script src="asserts/layui/layui.all.js" th:src="@{/asserts/layui/layui.all.js}"></script>
+    <script src="asserts/js/common.js"th:src="@{/asserts/js/common.js}"></script>
+    <!-- 引入样式 -->
+    <link href="asserts/layui/css/layui.css" th:href="@{/asserts/layui/css/layui.css}" rel="stylesheet">
+
+    <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.css}" rel="stylesheet">
+
+    <style>
+        .form-add-container {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .form-add {
+            width: 100%;
+            max-width: 330px;
+            text-align: center;
+            padding: 15px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div th:replace="commons/bar :: .layui-header"></div>
+
+    <div th:replace="commons/bar :: #sidemenu(activeUrl='cate')"></div>
+
+    <div class="layui-body">
+
+        <div class="form-add-container layui-col-md12">
+
+        <form class="form-add" th:action="@{/portal/cate/add}" th:method="POST">
+                <input type="hidden" name="_method" th:value="${cate !=null}?put:post">
+            <input type="hidden" name="id" class="form-control"  th:value="${cate!=null}?${cate.id}" >
+
+            分类名称<input type="text" name="cName" class="form-control" th:placeholder="分类名称" th:value="${cate!=null}?${cate.cName}" required  lay-verify="required"  autocomplete="off" >
+
+
+                <span style="color:red;margin-top: 50px;" th:text="${errorMsg}" th:if="${not #strings.isEmpty(errorMsg)}"></span>
+                <br>
+
+                <input class="layui-btn layui-btn-radius" type="submit" value="提交"  style="margin-top: 50px;">
+        </form>
+
+        </div>
+    </div>
+
+    <div th:replace="commons/bar :: .layui-footer"></div>
+</div>
+
+
+</body>
+</html>

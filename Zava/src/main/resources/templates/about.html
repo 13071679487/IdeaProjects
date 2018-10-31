@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>爪蛙</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+
+    <link rel="stylesheet" href="asserts/css/common.css" th:href="@{/asserts/css/common.css}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="asserts/css/animate.css" th:href="@{/asserts/css/animate.css}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="asserts/css/icomoon.css" th:href="@{/asserts/css/icomoon.css}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="asserts/css/bootstrap.css" th:href="@{/asserts/css/bootstrap.css}">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="asserts/css/magnific-popup.css" th:href="@{/asserts/css/magnific-popup.css}">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="asserts/css/flexslider.css" th:href="@{/asserts/css/flexslider.css}">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="asserts/css/owl.carousel.min.css" th:href="@{/asserts/css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="asserts/css/owl.theme.default.min.css" th:href="@{/asserts/css/owl.theme.default.min.css}">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="asserts/css/style.css" th:href="@{/asserts/css/style.css}">
+
+    <!-- Modernizr JS -->
+    <script src="asserts/js/modernizr-2.6.2.min.js" th:src="@{/asserts/js/modernizr-2.6.2.min.js}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="asserts/js/respond.min.js" th:src="@{/asserts/js/respond.min.js}"></script>
+    <![endif]-->
+
+</head>
+<body class="layui-layout-body" style="background-color: #eea236">
+<div class="colorlib-loader"></div>
+
+<div id="page">
+    <div th:replace="commons/bar :: #header(activeUrl='about')"></div>
+
+
+    <aside id="colorlib-breadcrumbs" style="margin-top: 150px;background-color: rgba(0,0,0,0)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 breadcrumbs text-center">
+                    <h2>关于我</h2>
+                    <p><span><a th:href="@{/}">主页</a></span> / <span>关于我</span></p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="colorlib-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive"  th:src="@{/asserts/images/author.jpg}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>你好呀！我叫<strong>黄理富</strong> , 很荣幸你能看到这里来。我就读于江门市五邑大学，全日制本科生（ps:虽然我们大学只是一个普通的本科院校，但是学习氛围真的不错)。我写这个自我介绍的时间是2018-10-12 15:30，我毕业时间应该是2019-6。就写这么点吧，有空再来写</p>
+                    <blockquote>
+                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                    </blockquote>
+                    <ul class="colorlib-social-icons">
+                        <!--<li><a ><i class="icon-twitter"></i></a></li>-->
+                        <!--<li><a ><i class="icon-facebook"></i></a></li>-->
+                        <!--<li><a ><i class="icon-linkedin"></i></a></li>-->
+                        <!--<li><a ><i class="icon-dribbble"></i></a></li>-->
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="colorlib-instagram">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 colorlib-heading text-center">
+                <h2>Gallery</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="instagram-entry">
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-1.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-2.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-3.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-4.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-5.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-6.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-7.jpg}" >
+                </img>
+                <img  class="instagram text-center" th:src="@{/asserts/images/gallery-8.jpg}" >
+                </img>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="commons/bar :: #colorlib-footer"></div>
+
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="asserts/js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}"></script>
+<!-- jQuery Easing -->
+<script src="asserts/js/jquery.easing.1.3.js" th:src="@{/asserts/js/jquery.easing.1.3.js}"></script>
+<!-- Bootstrap -->
+<script src="asserts/js/bootstrap.min.js" th:src="@{/asserts/js/bootstrap.min.js}"></script>
+<!-- Waypoints -->
+<script src="asserts/js/jquery.waypoints.min.js" th:src="@{/asserts/js/jquery.waypoints.min.js}"></script>
+<!-- Flexslider -->
+<script src="asserts/js/jquery.flexslider-min.js" th:src="@{/asserts/js/jquery.flexslider-min.js}"></script>
+<!-- Owl carousel -->
+<script src="asserts/js/owl.carousel.min.js" th:src="@{/asserts/js/owl.carousel.min.js}"></script>
+<!-- Magnific Popup -->
+<script src="asserts/js/jquery.magnific-popup.min.js" th:src="@{/asserts/js/jquery.magnific-popup.min.js}"></script>
+<script src="asserts/js/magnific-popup-options.js" th:src="@{/asserts/js/magnific-popup-options.js}"></script>
+<!-- Main -->
+<script src="asserts/js/main.js" th:src="@{/asserts/js/main.js}"></script>
+
+</body>
+</html>
